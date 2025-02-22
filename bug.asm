@@ -1,0 +1,3 @@
+mov eax, [ebx+ecx*4] ; This line attempts to access memory using scaled addressing. If ecx is a very large value, it could lead to an out-of-bounds memory access, causing a segmentation fault or other crashes.  It's not immediately obvious if ecx is always kept within safe limits. 
+
+mov edx, [esi+edi*8] ; Similar issue. This time it's using 8-byte scaling. If edi is too large, it will try to read beyond allocated memory.
